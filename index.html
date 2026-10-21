@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vontade Jose 馮達</title>
+<meta name="description" content="Vontade Jose (馮達): organizational development and information management at Tzu Chi Mozambique, small web systems, and Business Management studies.">
+<meta property="og:title" content="Vontade Jose 馮達">
+<meta property="og:description" content="Information management, operations and web systems between Mozambique and Taiwan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;700;900&display=swap">
+<style>
+/* Layout: one narrow column of oversized condensed type, broken by a two-city "bridge" band (Maputo × Hualien) and a stack of track-record entries. */
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --ink:#13201A; --muted:#56635B; --line:#D3DAD4;
+  --accent:#2340C8; --accent-ink:#FFFFFF; --tag:#E5EAE5;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+  --cjk:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --max:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1310; --surface:#141C18; --ink:#E6ECE8; --muted:#97A49C; --line:#26312B;
+    --accent:#8299FF; --accent-ink:#0D1310; --tag:#1B2520; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1310; --surface:#141C18; --ink:#E6ECE8; --muted:#97A49C; --line:#26312B;
+  --accent:#8299FF; --accent-ink:#0D1310; --tag:#1B2520; color-scheme:dark;
+}
+:root[data-lang="zh"] .en{display:none}
+:root:not([data-lang="zh"]) .zh{display:none}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+:root[data-lang="zh"] body{font-family:var(--cjk)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.wrap{
+  max-width:var(--max); margin:0 auto;
+  padding-left:max(20px, env(safe-area-inset-left, 0px));
+  padding-right:max(20px, env(safe-area-inset-right, 0px));
+}
+.mono{font-family:var(--mono); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--display); font-weight:900; line-height:.9; margin:0; text-transform:uppercase; text-wrap:balance; letter-spacing:.005em}
+:root[data-lang="zh"] h2, :root[data-lang="zh"] h3{font-family:var(--display), var(--cjk)}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg); border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex; align-items:center; gap:24px; padding-block:14px}
+.brand{font-family:var(--cjk); font-weight:900; font-size:1.25rem; text-decoration:none; letter-spacing:.04em}
+.nav ul{display:flex; gap:22px; list-style:none; margin:0 0 0 auto; padding:0}
+.nav ul a{text-decoration:none; font-size:.92rem; color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.lang{display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex-shrink:0}
+.lang button{all:unset; cursor:pointer; padding:5px 12px; font-family:var(--mono); font-size:.75rem; color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink); color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
+@media (max-width:720px){.nav ul{display:none} .lang{margin-left:auto}}
+
+/* hero */
+.hero{padding-block:56px 72px}
+.hero .eyebrow{color:var(--muted); margin:0 0 22px}
+.name{display:flex; align-items:flex-end; gap:clamp(12px,3vw,36px); flex-wrap:wrap}
+.name-latin{font-size:clamp(4.2rem,17vw,12rem); line-height:.82}
+.name-latin em{font-style:normal; color:var(--accent)}
+.name-cjk{font-family:var(--cjk); font-weight:900; font-size:clamp(3.2rem,11vw,7.5rem); line-height:1; text-transform:none; padding-bottom:.08em}
+.hero-grid{display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:40px; margin-top:44px; align-items:end}
+.lede{font-size:clamp(1.15rem,2.2vw,1.45rem); line-height:1.5; max-width:34ch; margin:0}
+.lede strong{color:var(--accent); font-weight:700}
+.portrait{aspect-ratio:4/5; max-width:100%; background:var(--ink); color:var(--bg); display:grid; place-items:center; position:relative; border-radius:2px}
+.portrait{margin:0; overflow:hidden; box-shadow:10px 10px 0 var(--accent)}
+.portrait img{width:100%; height:100%; object-fit:cover; display:block}
+.ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top:36px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.95rem; border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+@media (max-width:720px){
+  .hero-grid{grid-template-columns:1fr}
+  .portrait{max-width:240px}
+}
+@media (prefers-reduced-motion: no-preference){
+  .name-latin,.name-cjk{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .name-cjk{animation-delay:.12s}
+  @keyframes rise{from{transform:translateY(18px); opacity:.2}}
+}
+
+/* section shell */
+section.block{padding-block:84px; border-top:1px solid var(--line)}
+.sec-head{display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:40px}
+.sec-head h2{font-size:clamp(2.8rem,8vw,5.5rem)}
+.sec-head .mono{color:var(--muted)}
+.prose{max-width:62ch}
+.prose p{margin:0 0 1em}
+
+/* about */
+.about-grid{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:56px}
+.about-grid .big{font-size:clamp(1.3rem,2.4vw,1.7rem); line-height:1.4; margin:0; font-weight:500}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr; gap:24px}}
+
+/* bridge */
+.bridge{background:var(--ink); color:var(--bg)}
+.bridge .wrap{padding-block:72px}
+.bridge-grid{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:32px; align-items:start}
+.city h3{font-size:clamp(3rem,9vw,6rem)}
+.city .coord{opacity:.6; margin:10px 0 18px}
+.clock{font-family:var(--display); font-weight:800; font-size:2.4rem; font-variant-numeric:tabular-nums; line-height:1}
+.clock small{font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; opacity:.6; margin-left:6px}
+.city p{max-width:36ch; margin:16px 0 0; opacity:.85}
+.span{writing-mode:vertical-rl; transform:rotate(180deg); font-family:var(--mono); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; opacity:.55; align-self:center; border-left:1px dashed currentColor; padding-left:10px; white-space:nowrap}
+.langs{margin-top:48px; padding-top:24px; border-top:1px solid color-mix(in srgb, var(--bg) 25%, transparent); display:flex; gap:28px; flex-wrap:wrap; align-items:baseline}
+.langs b{font-family:var(--display); font-size:1.8rem; font-weight:800}
+.langs b.cjk{font-family:var(--cjk); font-weight:900; font-size:1.5rem}
+@media (max-width:720px){
+  .bridge-grid{grid-template-columns:1fr}
+  .span{writing-mode:horizontal-tb; transform:none; border-left:0; border-top:1px dashed currentColor; padding:10px 0 0; align-self:stretch}
+}
+
+/* track record */
+.record{display:grid; gap:0}
+.entry{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:40px; padding-block:40px; border-top:1px solid var(--line)}
+.entry:last-child{border-bottom:1px solid var(--line)}
+.entry .kicker{color:var(--accent); margin:0 0 12px}
+.entry h3{font-size:clamp(2rem,4.6vw,3.2rem)}
+.entry .org{margin:12px 0 0; font-weight:700}
+.entry .meta{color:var(--muted); margin-top:14px}
+.entry ul{margin:0; padding:0; list-style:none; display:grid; gap:12px}
+.entry li{padding-left:22px; position:relative}
+.entry li::before{content:""; position:absolute; left:0; top:.72em; width:10px; height:2px; background:var(--accent)}
+.entry li strong{font-weight:700}
+.entry .link{display:inline-block; margin-top:18px; font-family:var(--mono); font-size:.8rem; color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor; word-break:break-all}
+@media (max-width:820px){.entry{grid-template-columns:1fr; gap:20px}}
+
+/* expertise */
+.offers{list-style:none; margin:0 0 48px; padding:0}
+.offers li{font-family:var(--display); font-weight:800; text-transform:uppercase; font-size:clamp(1.8rem,5vw,3.2rem); line-height:1.05; padding-block:10px; border-bottom:1px solid var(--line); display:flex; gap:16px; align-items:baseline}
+:root[data-lang="zh"] .offers li{font-family:var(--cjk); font-weight:900; font-size:clamp(1.4rem,4vw,2.4rem)}
+.offers li .mono{font-family:var(--mono); font-size:.72rem; color:var(--muted); font-weight:400; flex-shrink:0; width:7.5em}
+.tags{display:flex; flex-wrap:wrap; gap:10px}
+.tags span{background:var(--tag); padding:8px 14px; border-radius:999px; font-size:.92rem}
+.tag-group{display:grid; grid-template-columns:160px minmax(0,1fr); gap:20px; padding-block:18px; border-top:1px dashed var(--line)}
+.tag-group .mono{color:var(--muted); padding-top:8px}
+@media (max-width:640px){.tag-group{grid-template-columns:1fr; gap:10px} .offers li .mono{display:none}}
+
+/* testimonials */
+.quotes{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px}
+.quote{border:1.5px dashed var(--line); padding:28px; border-radius:4px; display:flex; flex-direction:column; gap:20px}
+.quote p{margin:0; font-size:1.1rem; color:var(--muted)}
+.quote .who{display:flex; align-items:center; gap:12px}
+.quote .av{width:40px; height:40px; border-radius:50%; background:var(--tag); display:grid; place-items:center; font-weight:700; color:var(--muted)}
+.quote .mono{color:var(--muted)}
+.draft-note{margin:0 0 20px; color:var(--muted); font-size:.95rem}
+@media (max-width:720px){.quotes{grid-template-columns:1fr}}
+
+/* contact */
+.contact h2{font-size:clamp(4rem,15vw,10rem)}
+.contact h2 em{font-style:normal; color:var(--accent)}
+.mail{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:36px}
+.mail code{font-family:var(--mono); font-size:clamp(1rem,3vw,1.5rem); user-select:all; word-break:break-all}
+.copy{all:unset; cursor:pointer; font-family:var(--mono); font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; padding:8px 14px; border:1px solid var(--ink); border-radius:999px}
+.copy:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.socials{display:flex; gap:28px; flex-wrap:wrap; margin-top:32px}
+.socials a, .socials span{font-weight:700; text-decoration:none; border-bottom:2px solid var(--accent); padding-bottom:2px}
+.socials span{border-bottom-style:dashed; color:var(--muted)}
+
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-block:28px; border-top:1px solid var(--line); color:var(--muted)}
+footer b{font-family:var(--cjk); font-weight:900; color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">馮達</a>
+    <ul>
+      <li><a href="#about"><span class="en">About</span><span class="zh">關於我</span></a></li>
+      <li><a href="#work"><span class="en">Track record</span><span class="zh">經歷</span></a></li>
+      <li><a href="#expertise"><span class="en">Expertise</span><span class="zh">專長</span></a></li>
+      <li><a href="#testimonials"><span class="en">Testimonials</span><span class="zh">推薦</span></a></li>
+      <li><a href="#contact"><span class="en">Contact</span><span class="zh">聯絡</span></a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" id="lang-zh" data-set="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow mono">
+      <span class="en">Information management × Operations × Business management</span>
+      <span class="zh">資訊管理 × 營運 × 企業管理</span>
+    </p>
+    <h1 class="name"><span class="name-latin">Vontade<br>Jose<em>.</em></span><span class="name-cjk">馮達</span></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lede">
+          <span class="en">I build systems that help organizations keep track of what they know. Today that means <strong>information management at Tzu Chi Mozambique</strong>, practical web tools for local businesses, and a degree in Business Management.</span>
+          <span class="zh">我為組織建立能保存知識的系統。目前在<strong>慈濟莫三比克</strong>負責資訊管理與組織發展，同時為在地企業開發實用的網站工具，並就讀企業管理學系。</span>
+        </p>
+        <div class="ctas">
+          <a class="btn primary" href="#work"><span class="en">See my work</span><span class="zh">查看作品</span> →</a>
+          <a class="btn" href="#contact"><span class="en">Contact me</span><span class="zh">與我聯絡</span></a>
+        </div>
+      </div>
+      <figure class="portrait"><img src="photo.jpg" alt="Portrait of Vontade Jose" width="640" height="800"></figure>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">About me</span><span class="zh">關於我</span></h2>
+        <span class="mono">Maputo · Sofala · Hualien</span>
+      </div>
+      <div class="about-grid">
+        <p class="big">
+          <span class="en">I work where organizations lose information: in WhatsApp threads, scattered spreadsheets, and knowledge that leaves when a person leaves.</span>
+          <span class="zh">我專注於組織最容易遺失資訊的地方：散落在 WhatsApp 對話、各自為政的試算表，以及隨人員離開而流失的經驗。</span>
+        </p>
+        <div class="prose">
+          <p class="en">At the Tzu Chi Foundation in Mozambique I work in organizational development and operations, with a focus on information management, documentation and strategic planning across our hubs in Maputo and Sofala Province and our headquarters in Taiwan.</p>
+          <p class="en">Alongside that, I study Business Management with coursework in economics and accounting, and I build small, deployable web systems that solve a real problem for the people using them.</p>
+          <p class="zh">我在慈濟基金會莫三比克分會從事組織發展與營運工作，重點在資訊管理、文件制度與策略規劃，連結馬布多、索法拉省據點與台灣本會。</p>
+          <p class="zh">同時，我就讀企業管理學系，修習經濟學與會計學，並開發能實際部署、解決使用者真實問題的小型網站系統。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bridge" aria-label="Locations">
+    <div class="wrap">
+      <div class="bridge-grid">
+        <div class="city">
+          <p class="mono" style="margin:0 0 10px;opacity:.6"><span class="en">Work</span><span class="zh">工作</span></p>
+          <h3>Maputo</h3>
+          <p class="coord mono">25.97°S · 32.57°E</p>
+          <div class="clock"><span id="clock-mz">--:--</span><small>CAT · UTC+2</small></div>
+          <p><span class="en">Tzu Chi Foundation hubs in Maputo and Sofala Province.</span><span class="zh">慈濟莫三比克：馬布多與索法拉省據點。</span></p>
+        </div>
+        <div class="span">≈ 11,000 km · Indian Ocean</div>
+        <div class="city">
+          <p class="mono" style="margin:0 0 10px;opacity:.6"><span class="en">Study &amp; HQ</span><span class="zh">求學與本會</span></p>
+          <h3>Hualien</h3>
+          <p class="coord mono">23.99°N · 121.60°E</p>
+          <div class="clock"><span id="clock-tw">--:--</span><small>CST · UTC+8</small></div>
+          <p><span class="en">Business Management studies, and the foundation's international connections in Taiwan.</span><span class="zh">企業管理學系，以及基金會在台灣的國際連結。</span></p>
+        </div>
+      </div>
+      <div class="langs">
+        <span class="mono" style="opacity:.6"><span class="en">Working languages</span><span class="zh">工作語言</span></span>
+        <b>English</b><b class="cjk">中文</b><b>Português</b>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">Track record</span><span class="zh">經歷與作品</span></h2>
+        <span class="mono"><span class="en">Selected work</span><span class="zh">精選</span></span>
+      </div>
+      <div class="record">
+        <article class="entry">
+          <div>
+            <p class="kicker mono"><span class="en">Organizational development</span><span class="zh">組織發展</span></p>
+            <h3><span class="en">Information management</span><span class="zh">資訊管理</span></h3>
+            <p class="org">Tzu Chi Foundation · Mozambique</p>
+            <p class="meta mono">Maputo &amp; Sofala / <span class="en">Sep 2026 – Present</span><span class="zh">2026年9月 – 至今</span></p>
+          </div>
+          <ul>
+            <li class="en">Wrote a Portuguese-language proposal for a new <strong>Information Management Department (DGI)</strong>, with three integrated SOPs and a volunteer coding system</li>
+            <li class="en">Designed an <strong>Information Management System</strong> proposal to replace data scattered across WhatsApp, Excel and Word</li>
+            <li class="en">Produced a <strong>strategic framework</strong> for foundation leadership on building the department</li>
+            <li class="zh">以葡萄牙文撰寫成立<strong>資訊管理部（DGI）</strong>的提案，包含三套整合式標準作業程序與志工編碼系統</li>
+            <li class="zh">提出<strong>資訊管理系統</strong>方案，整合散落於 WhatsApp、Excel 與 Word 的資料</li>
+            <li class="zh">為基金會領導層撰寫部門建置的<strong>策略架構</strong>文件</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div>
+            <p class="kicker mono"><span class="en">Web system</span><span class="zh">網站系統</span></p>
+            <h3><span class="en">Hotel booking system</span><span class="zh">飯店訂房系統</span></h3>
+            <p class="org"><span class="en">Hotel in Mozambique</span><span class="zh">莫三比克在地飯店</span></p>
+            <p class="meta mono">Supabase · GitHub Pages / <span class="en">In development</span><span class="zh">開發中</span></p>
+          </div>
+          <ul>
+            <li class="en">Built for a hotel that had <strong>no booking system</strong> at all</li>
+            <li class="en"><strong>Supabase</strong> database protected with row-level security; every write goes through database functions</li>
+            <li class="en">Lightweight <strong>HTML, CSS and JavaScript</strong> client hosted on GitHub Pages</li>
+            <li class="zh">為一間<strong>原本沒有訂房系統</strong>的飯店量身打造</li>
+            <li class="zh">使用 <strong>Supabase</strong> 資料庫，以列級安全性（RLS）保護，所有寫入皆透過資料庫函式</li>
+            <li class="zh">以 <strong>HTML、CSS、JavaScript</strong> 撰寫前端，部署於 GitHub Pages</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div>
+            <p class="kicker mono"><span class="en">Web design</span><span class="zh">網頁設計</span></p>
+            <h3><span class="en">Department website</span><span class="zh">系所網站</span></h3>
+            <p class="org"><span class="en">Department of Business Management</span><span class="zh">企業管理學系</span></p>
+            <p class="meta mono">Hualien / <span class="en">Course project</span><span class="zh">課程專題</span></p>
+          </div>
+          <div>
+            <ul>
+              <li class="en">Bilingual <strong>Chinese / English</strong> site with a language switch</li>
+              <li class="en">Classic academic structure with a <strong>minimalist</strong> restyle</li>
+              <li class="en">Published on <strong>GitHub Pages</strong></li>
+              <li class="zh">具語言切換功能的<strong>中英雙語</strong>網站</li>
+              <li class="zh">以經典學術架構為基礎，改為<strong>極簡</strong>風格</li>
+              <li class="zh">部署於 <strong>GitHub Pages</strong></li>
+            </ul>
+            <a class="link" href="https://teddy5590.github.io/business-department/" target="_blank" rel="noopener">teddy5590.github.io/business-department ↗</a>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div>
+            <p class="kicker mono"><span class="en">Education</span><span class="zh">學歷</span></p>
+            <h3><span class="en">Business Management</span><span class="zh">企業管理</span></h3>
+            <p class="org"><span class="en">Tzu Chi University</span><span class="zh">慈濟大學</span></p>
+            <p class="meta mono">Hualien / <span class="en">Oct 2023 – Present</span><span class="zh">2023年10月 – 至今</span></p>
+          </div>
+          <ul>
+            <li class="en"><strong>Economics:</strong> demand and elasticity, consumer and producer surplus, comparative advantage and gains from trade</li>
+            <li class="en"><strong>Accounting:</strong> adjusting entries, perpetual inventory, merchandising transactions and gross profit</li>
+            <li class="zh"><strong>經濟學：</strong>需求與彈性、消費者與生產者剩餘、比較利益與貿易利得</li>
+            <li class="zh"><strong>會計學：</strong>調整分錄、永續盤存制、買賣業交易與毛利計算</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="expertise">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">How I can help</span><span class="zh">我能協助的事</span></h2>
+      </div>
+      <ul class="offers">
+        <li><span class="mono">NGO</span><span class="en">Information systems for nonprofits</span><span class="zh">非營利組織資訊系統</span></li>
+        <li><span class="mono">Process</span><span class="en">Documentation &amp; SOPs</span><span class="zh">文件制度與標準作業程序</span></li>
+        <li><span class="mono">Web</span><span class="en">Web tools for small businesses</span><span class="zh">小型企業網站工具</span></li>
+        <li><span class="mono">Bridge</span><span class="en">Taiwan–Mozambique coordination</span><span class="zh">台灣與莫三比克之間的協調</span></li>
+      </ul>
+      <div class="tag-group">
+        <span class="mono"><span class="en">Management</span><span class="zh">管理</span></span>
+        <div class="tags">
+          <span class="en">Information management</span><span class="zh">資訊管理</span>
+          <span class="en">Organizational development</span><span class="zh">組織發展</span>
+          <span class="en">Operations</span><span class="zh">營運</span>
+          <span class="en">Strategic planning</span><span class="zh">策略規劃</span>
+          <span class="en">Proposal writing</span><span class="zh">提案撰寫</span>
+          <span class="en">SOP design</span><span class="zh">SOP 設計</span>
+        </div>
+      </div>
+      <div class="tag-group">
+        <span class="mono"><span class="en">Technology</span><span class="zh">技術</span></span>
+        <div class="tags">
+          <span>HTML / CSS / JavaScript</span><span>Supabase</span><span>PostgreSQL · RLS</span><span>GitHub Pages</span>
+          <span class="en">AI-assisted development</span><span class="zh">AI 輔助開發</span>
+        </div>
+      </div>
+      <div class="tag-group">
+        <span class="mono"><span class="en">Business</span><span class="zh">商管</span></span>
+        <div class="tags">
+          <span class="en">Financial accounting</span><span class="zh">財務會計</span>
+          <span class="en">Microeconomics</span><span class="zh">個體經濟學</span>
+          <span class="en">Translation EN · 中文 · PT</span><span class="zh">英、中、葡翻譯</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="testimonials">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="en">Testimonials</span><span class="zh">推薦</span></h2>
+      </div>
+      <p class="draft-note"><span class="en">Draft: ask a supervisor or colleague for two or three sentences about working with you, then replace these cards.</span><span class="zh">草稿：請主管或同事寫兩三句與您共事的感想，再替換以下卡片。</span></p>
+      <div class="quotes">
+        <figure class="quote" style="margin:0">
+          <p><span class="en">“A short quote about how you organized information or solved a problem for the team.”</span><span class="zh">「一段關於您如何整理資訊或為團隊解決問題的簡短推薦。」</span></p>
+          <figcaption class="who"><span class="av">?</span><span><b><span class="en">Name</span><span class="zh">姓名</span></b><br><span class="mono"><span class="en">Role · Organization</span><span class="zh">職稱 · 單位</span></span></span></figcaption>
+        </figure>
+        <figure class="quote" style="margin:0">
+          <p><span class="en">“A second quote, ideally from someone who used one of the systems you built.”</span><span class="zh">「第二段推薦，最好來自實際使用過您所建系統的人。」</span></p>
+          <figcaption class="who"><span class="av">?</span><span><b><span class="en">Name</span><span class="zh">姓名</span></b><br><span class="mono"><span class="en">Role · Organization</span><span class="zh">職稱 · 單位</span></span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <h2><span class="en">Let's <em>talk</em></span><span class="zh">聯絡<em>我</em></span></h2>
+      <div class="mail">
+        <code id="email">vontademazino@gmail.com</code>
+        <button class="copy" type="button" id="copy-email"><span class="en">Copy</span><span class="zh">複製</span></button>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Teddy5590" target="_blank" rel="noopener">GitHub ↗</a>
+        <span title="Add your LinkedIn URL">LinkedIn</span>
+        <span title="Add a link to your CV PDF"><span class="en">Download CV</span><span class="zh">下載履歷</span></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vontade Jose · <b>馮達</b> · © 2026</span>
+    <span class="mono">Maputo ⇄ Hualien</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  function setLang(l){
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.set === l ? 'true' : 'false'); });
+    try{ localStorage.setItem('fd-lang', l); }catch(e){}
+  }
+  var saved = null;
+  try{ saved = localStorage.getItem('fd-lang'); }catch(e){}
+  setLang(saved === 'zh' ? 'zh' : 'en');
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.set); }); });
+
+  function tick(){
+    [['clock-mz','Africa/Maputo'],['clock-tw','Asia/Taipei']].forEach(function(p){
+      try{
+        document.getElementById(p[0]).textContent = new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:p[1]}).format(new Date());
+      }catch(e){}
+    });
+  }
+  tick(); setInterval(tick, 20000);
+
+  var btn = document.getElementById('copy-email');
+  btn.addEventListener('click', function(){
+    var text = document.getElementById('email').textContent;
+    function done(){ btn.querySelector('.en').textContent = 'Copied'; btn.querySelector('.zh').textContent = '已複製'; setTimeout(function(){ btn.querySelector('.en').textContent = 'Copy'; btn.querySelector('.zh').textContent = '複製'; }, 1800); }
+    function fallback(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+
+</body>
+</html>
